@@ -12,6 +12,6 @@ Shell script using Systemd for updating your domains at http://freedns.afraid.or
 ## Setup
 1. Edit the configuration file, /etc/free_dns.conf
 
-- Start the FreeDns Systemd service
+2. Start the FreeDns Systemd service
 
         $ sudo systemctl restart freedns.service
