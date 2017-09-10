@@ -1,0 +1,9 @@
+[Unit]
+Description=runs every 24 hours and on boot
+
+[Timer]
+OnBootSec=5min
+OnUnitActiveSec=24h
+
+[Install]
+WantedBy=timers.target
