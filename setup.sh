@@ -1,8 +1,13 @@
 #!/bin/bash
+
+if [ "$EUID" -ne 0 ]
+  then echo "Please run as sudo/root"
+  exit
+fi
+
 cd "$( dirname "${BASH_SOURCE[0]}" )"
 
 SYSTEMD_UNIT="free_dns"
-mv ${SYSTEMD_UNIT}.conf /etc/
 mv ${SYSTEMD_UNIT}.service /etc/systemd/system/
 mv ${SYSTEMD_UNIT}.timer /etc/systemd/system/
 mv ${SYSTEMD_UNIT} /usr/local/sbin/
