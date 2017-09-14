@@ -80,5 +80,4 @@ else
         done <"$FREE_DNS_CONF"
     fi
 fi
-echo "EXIT_STATUS=[${EXIT_STATUS}]"
 exit $EXIT_STATUS
