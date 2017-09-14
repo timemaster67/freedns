@@ -1,17 +1,24 @@
 # FreeDns
 
-Shell script using Systemd for updating your domains at http://freedns.afraid.org. Uses opendns and dig to resolve the external IP address. Only updates afraid.org when the external IP has changed.
+Shell script using Systemd for updating your domains at [FreeDNS](http://freedns.afraid.org). Uses [OpenDNS](https://opendns.com/) to resolve the external IP address and your domain IP addresses. Only updates afraid.org when the IP addresses do not match.
+
+## References
+
+[FreeDNS](https://freedns.afraid.org/)
+
+[OpenDNS](https://opendns.com/)
+
 
 ## Requirements
         Dig
-        Wget
+        Curl
 
 ## Install
         $ sudo ./setup.sh
 
 ## Setup
-1. Edit the configuration file, /etc/free_dns.conf
+1. Create and Edit the configuration file, /etc/free_dns.conf
 
-2. Start the FreeDns Systemd service
+2. Start the FreeDns Systemd timer
 
-        $ sudo systemctl restart freedns.service
+        $ sudo systemctl restart freedns.timer
