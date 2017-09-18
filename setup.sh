@@ -8,9 +8,14 @@ fi
 cd "$( dirname "${BASH_SOURCE[0]}" )"
 
 SYSTEMD_UNIT="free_dns"
-mv ${SYSTEMD_UNIT}.service /etc/systemd/system/
-mv ${SYSTEMD_UNIT}.timer /etc/systemd/system/
-mv ${SYSTEMD_UNIT} /usr/local/sbin/
+
+# do not clobber an existing config file
+cp -n ${SYSTEMD_UNIT}.conf /etc/
+
+# create systemd service
+cp ${SYSTEMD_UNIT}.service /etc/systemd/system/
+cp ${SYSTEMD_UNIT}.timer /etc/systemd/system/
+cp ${SYSTEMD_UNIT} /usr/local/sbin/
 
 systemctl daemon-reload
 systemctl enable ${SYSTEMD_UNIT}.service
