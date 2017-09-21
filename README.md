@@ -21,4 +21,4 @@ Shell script using Systemd for updating your domains at [FreeDNS](http://freedns
 
 2. Start the FreeDns Systemd timer
 
-        $ sudo systemctl restart freedns.timer
+        $ sudo systemctl restart free_dns.timer
