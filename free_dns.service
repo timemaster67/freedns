@@ -10,3 +10,6 @@ StandardOutput=syslog
 StandardError=syslog
 Restart=no
 ExecStart=/usr/local/sbin/free_dns
+
+[Install]
+WantedBy=free_dns.timer
