@@ -6,7 +6,7 @@ Wants=network-online.target
 [Service]
 User=nobody
 Type=exec
-ExecStart=/usr/local/bin/freedns
+ExecStart=/usr/local/bin/freedns.sh
 
 [Install]
 WantedBy=freedns.timer

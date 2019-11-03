@@ -15,7 +15,7 @@ cp -n ${SYSTEMD_UNIT}.conf /etc/
 # create systemd service
 cp ${SYSTEMD_UNIT}.service /etc/systemd/system/
 cp ${SYSTEMD_UNIT}.timer /etc/systemd/system/
-cp ${SYSTEMD_UNIT} /usr/local/bin/
+cp ${SYSTEMD_UNIT}.sh /usr/local/bin/
 
 systemctl daemon-reload
 systemctl enable ${SYSTEMD_UNIT}.service
