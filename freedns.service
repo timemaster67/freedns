@@ -5,11 +5,8 @@ Wants=network-online.target
 
 [Service]
 User=nobody
-Type=simple
-StandardOutput=syslog
-StandardError=syslog
-Restart=no
-ExecStart=/usr/local/sbin/free_dns
+Type=exec
+ExecStart=/usr/local/bin/freedns
 
 [Install]
-WantedBy=free_dns.timer
+WantedBy=freedns.timer

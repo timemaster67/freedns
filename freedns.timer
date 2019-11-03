@@ -1,0 +1,9 @@
+[Unit]
+Description=Update dns on freedns every 12 hours and on boot
+
+[Timer]
+OnBootSec=1min
+OnUnitActiveSec=12hours
+
+[Install]
+WantedBy=timers.target

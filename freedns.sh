@@ -8,8 +8,8 @@
 
 EXIT_STATUS=0
 
-FREE_DNS_CONF="/etc/free_dns.conf"
-FREE_DNS_URL="http://sync.afraid.org/u"
+FREE_DNS_CONF="/etc/freedns.conf"
+FREE_DNS_URL="https://freedns.afraid.org/dynamic/update.php?"
 
 RESOLVER_URL="myip.opendns.com"
 RESOLVER_SERVER="resolver1.opendns.com"
@@ -57,7 +57,7 @@ else
                     MESSAGE="MYIP=[${MYIP}], OLDIP=[${OLDIP}]"
 
                 else
-                    FREEDNS_RETURN=$(curl -s "${FREE_DNS_URL}/${token}/")
+                    FREEDNS_RETURN=$(curl -s --ssl-reqd "${FREE_DNS_URL}${token}")
                     FREEDNS_EXITCODE=$?
 
                     if [[ FREEDNS_EXITCODE -eq 0 ]]; then
